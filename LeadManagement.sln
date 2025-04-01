@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadManagement.API", "LeadManagement.API\LeadManagement.API.csproj", "{0D2CA0A9-68E4-2D13-6F6E-C9D9582010D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3B4D5132-B48D-4846-879F-B98038AE0479} = {3B4D5132-B48D-4846-879F-B98038AE0479}
+		{805ACC55-661F-4BC9-88EC-0B53F91A63C5} = {805ACC55-661F-4BC9-88EC-0B53F91A63C5}
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9} = {B277F223-5AED-4DBB-AA29-CBE67E332BA9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadManagement.Infra", "LeadManagement.Infra\LeadManagement.Infra.csproj", "{BAFB2019-15F8-463D-AA9E-EE5B02D479F4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9} = {B277F223-5AED-4DBB-AA29-CBE67E332BA9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadManagement.Domain", "LeadManagement.Domain\LeadManagement.Domain.csproj", "{B277F223-5AED-4DBB-AA29-CBE67E332BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadManagement.IoC", "LeadManagement.IoC\LeadManagement.IoC.csproj", "{3B4D5132-B48D-4846-879F-B98038AE0479}"
+	ProjectSection(ProjectDependencies) = postProject
+		{805ACC55-661F-4BC9-88EC-0B53F91A63C5} = {805ACC55-661F-4BC9-88EC-0B53F91A63C5}
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9} = {B277F223-5AED-4DBB-AA29-CBE67E332BA9}
+		{BAFB2019-15F8-463D-AA9E-EE5B02D479F4} = {BAFB2019-15F8-463D-AA9E-EE5B02D479F4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadManagement.Application", "LeadManagement.Application\LeadManagement.Application.csproj", "{805ACC55-661F-4BC9-88EC-0B53F91A63C5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9} = {B277F223-5AED-4DBB-AA29-CBE67E332BA9}
+		{BAFB2019-15F8-463D-AA9E-EE5B02D479F4} = {BAFB2019-15F8-463D-AA9E-EE5B02D479F4}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D2CA0A9-68E4-2D13-6F6E-C9D9582010D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D2CA0A9-68E4-2D13-6F6E-C9D9582010D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D2CA0A9-68E4-2D13-6F6E-C9D9582010D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D2CA0A9-68E4-2D13-6F6E-C9D9582010D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFB2019-15F8-463D-AA9E-EE5B02D479F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFB2019-15F8-463D-AA9E-EE5B02D479F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFB2019-15F8-463D-AA9E-EE5B02D479F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFB2019-15F8-463D-AA9E-EE5B02D479F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B277F223-5AED-4DBB-AA29-CBE67E332BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4D5132-B48D-4846-879F-B98038AE0479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4D5132-B48D-4846-879F-B98038AE0479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4D5132-B48D-4846-879F-B98038AE0479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4D5132-B48D-4846-879F-B98038AE0479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805ACC55-661F-4BC9-88EC-0B53F91A63C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805ACC55-661F-4BC9-88EC-0B53F91A63C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805ACC55-661F-4BC9-88EC-0B53F91A63C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805ACC55-661F-4BC9-88EC-0B53F91A63C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DC4BE2D-ABE6-4612-A5FE-3A862C83D79E}
+	EndGlobalSection
+EndGlobal
