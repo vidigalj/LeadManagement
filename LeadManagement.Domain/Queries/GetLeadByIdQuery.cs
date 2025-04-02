@@ -1,7 +1,14 @@
 ﻿using LeadManagement.Domain.Entities;
 using MediatR;
 
-namespace LeadManagement.Domain.Queries
+namespace LeadManagement.Domain.Queries;
+
+public class GetLeadByIdQuery : IRequest<Lead>
 {
-    public record GetLeadByIdQuery(Guid Id) : IRequest<Lead>;
+    public Guid Id { get; set; }
+
+    public GetLeadByIdQuery(Guid id)
+    {
+        Id = id;
+    }
 }

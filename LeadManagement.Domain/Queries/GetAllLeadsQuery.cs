@@ -3,5 +3,4 @@ using MediatR;
 
 namespace LeadManagement.Domain.Queries;
 
-public record GetAllLeadsQuery : IRequest<IEnumerable<Lead>>;
-
+public class GetAllLeadsQuery : IRequest<IEnumerable<Lead>>;

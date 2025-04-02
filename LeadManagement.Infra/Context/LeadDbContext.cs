@@ -12,6 +12,7 @@ public class LeadDbContext : BaseDbContext<LeadDbContext>
     }
 
     public DbSet<Lead> Leads { get; set; }
+    public DbSet<EventEntity> Events { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

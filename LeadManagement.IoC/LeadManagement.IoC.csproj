@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LeadManagement.Application\LeadManagement.Application.csproj" />
     <ProjectReference Include="..\LeadManagement.Infra\LeadManagement.Infra.csproj" />
   </ItemGroup>
 

@@ -25,7 +25,7 @@ public class LeadMap : IEntityTypeConfiguration<Lead>
             .HasMaxLength(100);
         builder.Property(x => x.Email)
             .IsRequired()
-            .HasMaxLength(20);
+            .HasMaxLength(30);
         builder.Property(x => x.Suburb)
             .IsRequired()
             .HasMaxLength(500);
@@ -36,15 +36,17 @@ public class LeadMap : IEntityTypeConfiguration<Lead>
             .IsRequired()
             .HasMaxLength(500);
         builder.Property(x => x.Price)
+            .HasColumnType("decimal")
+            .HasPrecision(18, 2)
             .IsRequired();
         builder.Property(x => x.CreateDate)
-            .IsRequired();
-        builder.Property(x => x.UpdateDate)
+            .ValueGeneratedOnAdd()
             .IsRequired();
         builder.Property(x => x.Status)
             .IsRequired();
 
-        builder.HasIndex(x => x.Email)
-            .IsUnique();
+        builder.Property(x => x.UpdateDate);
+
+        builder.HasIndex(x => x.Email);
     }
 }
