@@ -1,4 +1,5 @@
 ﻿using LeadManagement.Domain.Commands;
+using LeadManagement.Domain.Enums;
 using LeadManagement.Domain.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LeadManagement.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class LeadController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -16,14 +17,14 @@ namespace LeadManagement.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("[controller]")]
         public async Task<IActionResult> AddLead([FromBody] AddLeadCommand command)
         {
             var leadId = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetLeadById), new { id = leadId }, leadId);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("[controller]/{id}")]
         public async Task<IActionResult> UpdateLead(Guid id, [FromBody] UpdateLeadCommand command)
         {
             if (id != command.Id)
@@ -35,7 +36,7 @@ namespace LeadManagement.API.Controllers
             return NoContent();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("[controller]/{id}")]
         public async Task<IActionResult> GetLeadById(Guid id)
         {
             var lead = await _mediator.Send(new GetLeadByIdQuery(id));
@@ -47,10 +48,10 @@ namespace LeadManagement.API.Controllers
             return Ok(lead);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAllLeads()
+        [HttpGet("Leads/{status}")]
+        public async Task<IActionResult> GetAllLeads(ELeadStatus status)
         {
-            var leads = await _mediator.Send(new GetAllLeadsQuery());
+            var leads = await _mediator.Send(new GetAllByStatusLeadsQuery(status));
             return Ok(leads);
         }
     }

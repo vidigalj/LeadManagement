@@ -4,7 +4,6 @@
     {
         Task AddAsync(T entity, CancellationToken cancellation = default);
         Task<T> GetAsync(Guid id, CancellationToken cancellation = default);
-        Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellation = default);
         Task UpdateAsync(T entity, CancellationToken cancellation = default);
     }
 }

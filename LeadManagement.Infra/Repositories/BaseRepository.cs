@@ -21,11 +21,6 @@ public class BaseRepository<T> : IRepository<T> where T : class
         await _context.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellation = default)
-    {
-        return await _dbSet.ToListAsync(cancellation);
-    }
-
     public async Task<T> GetAsync(Guid id, CancellationToken cancellation = default)
     {
         return await _dbSet.FindAsync([id], cancellation);

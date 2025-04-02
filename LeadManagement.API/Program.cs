@@ -18,6 +18,13 @@ var assemblies = new Assembly[]
 };
 
 builder.Services.AddDependencies(builder.Configuration, assemblies);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+});
 
 var app = builder.Build();
 
@@ -33,5 +40,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("AllowAll");
 
 app.Run();

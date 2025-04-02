@@ -37,6 +37,7 @@ public static class ServiceCollectionExtension
         });
 
         services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+        services.AddScoped<ILeadRepository, LeadRepository>();
         services.AddScoped<IEventStore, EventStore>();
         return services;
     }
